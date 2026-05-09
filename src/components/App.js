@@ -16,7 +16,7 @@ const App = () => {
     <div className="container">
       {/* Do not remove the main div */}
       <h1>Time on Page</h1>
-      <p>{seconds} seconds</p>
+      <p>You've been on this page for {seconds} seconds.</p>
     </div>
   );
 };

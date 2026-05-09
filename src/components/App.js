@@ -1,13 +1,24 @@
-
-import React from "react";
-import './../styles/App.css';
+import React, { useEffect, useState } from "react";
+import "./../styles/App.css";
 
 const App = () => {
-  return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+  const [seconds, setSeconds] = useState(0);
 
-export default App
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds((prev) => prev + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="container">
+      {/* Do not remove the main div */}
+      <h1>Time on Page</h1>
+      <h2>{seconds} seconds</h2>
+    </div>
+  );
+};
+
+export default App;
